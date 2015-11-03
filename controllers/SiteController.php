@@ -1,8 +1,5 @@
 <?php
 
-include_once ROOT . '/models/Category.php';
-include_once ROOT . '/models/Product.php';
-
 class SiteController
 {
 
@@ -12,7 +9,7 @@ class SiteController
 		$categories = Category::getCategoriesList(); //getting method category 
 
 		$latestProduct = array();
-		$latestProduct = Product::getLatestProduct(5);
+		$latestProduct = Product::getLatestProduct(6);
 
 		require_once(ROOT . '/views/site/index.php');
 

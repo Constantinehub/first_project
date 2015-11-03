@@ -31,9 +31,11 @@ class Router
 		//Проверить наличие такого запроса в routes.php
 		foreach($this->routes as $uriPattern => $path)
 		{
+
 			//Сравниваем $uriPattern и $uri
 			if(preg_match("~$uriPattern~", $uri))
 			{
+
 				//Получаем внуттренний путь из внешнего согласно правилу
 				$internalRouter = preg_replace("~$uriPattern~", $path, $uri); //Выполняет поиск совпадений $uriPattern с $uri и если они есть заменяет их на то что в $path
 
@@ -58,7 +60,7 @@ class Router
 				$controllerObject = new $controllerName;
 
 				$result = call_user_func_array(array($controllerObject, $actionName), $parameter);
-				//$result = $controllerObject->$actionName($parameter);
+				//Другой способ   $result = $controllerObject->$actionName($parameter);
 
 				if($result != null)
 				{
