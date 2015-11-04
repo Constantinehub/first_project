@@ -46,7 +46,6 @@ class Router
 				$controllerName = ucfirst($controllerName);
 
 				$actionName = 'action' . ucfirst(array_shift($segments));
-
 				$parameter = $segments;
 
 				//Подключить файл класса-контроллера
